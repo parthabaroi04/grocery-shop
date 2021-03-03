@@ -14,7 +14,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="{{route('home')}}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
@@ -64,6 +64,19 @@
                 <h6 class="collapse-header">Subcategory</h6>
                 <a class="collapse-item" href="{{route('add-subcategory')}}">Add Subcategory</a>
                 <a class="collapse-item" href="{{route('manage-subcategory')}}">Manage Subcategory</a>
+            </div>
+        </div>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-folder"></i>
+            <span>Product</span>
+        </a>
+        <div id="collapseSeven" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Product</h6>
+                <a class="collapse-item" href="{{route('add-product')}}">Add Product</a>
+                <a class="collapse-item" href="{{route('manage-product')}}">Manage Product</a>
             </div>
         </div>
     </li>

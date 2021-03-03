@@ -53,5 +53,9 @@ Route::get('/brand/edit-brand/{id}','BrandController@editBrand')->name('edit-bra
 Route::post('/brand/update-brand','BrandController@updateBrand')->name('update-brand');
 Route::post('/brand/delete-brand','BrandController@deleteBrand')->name('delete-brand');
 /*-- Brand Section End--*/
+/*-- Product Section Start--*/
+Route::get('/product/add-product','ProductController@addProduct')->name('add-product');
+Route::get('/product/manage-product','ProductController@manageProduct')->name('manage-product');
+/*-- Product Section End--*/
 
 /*-- Admin Site End*/
