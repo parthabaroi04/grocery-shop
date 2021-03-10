@@ -32,7 +32,7 @@
                            </div>
                            <div class="row form-group">
                                <div class="col-md-9 offset-3">
-                                   <input type="submit" value="Save Category Info" name="submit" class="btn btn-info btn-block">
+                                   <input type="submit" value="Save Category Info" name="submit" class="btn btn-success btn-block">
                                </div>
                            </div>
                        </form>

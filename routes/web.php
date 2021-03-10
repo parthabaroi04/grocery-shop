@@ -26,21 +26,33 @@ Route::post('/slider/delete-slider','SliderController@deleteSlider')->name('dele
 /*-- Slider Section End --*/
 
 /*-- Category Section Start--*/
-Route::get('/category/add-category','CategoryController@index')->name('add-category');
-Route::post('/category/save-category','CategoryController@saveCategory')->name('save-category');
-Route::get('/category/manage-category','CategoryController@manageCategory')->name('manage-category');
-Route::get('/category/unpublished-category/{id}','CategoryController@unpublishedCategory')->name('unpublished-category');
-Route::get('/category/published-category/{id}','CategoryController@publishedCategory')->name('published-category');
-Route::get('/category/edit-category/{id}','CategoryController@editCategory')->name('edit-category');
-Route::post('/category/update-category','CategoryController@updateCategory')->name('update-category');
-Route::post('/category/delete-category','CategoryController@deleteCategory')->name('delete-category');
+Route::prefix('category')->group(function (){
+    Route::get('/add-category','CategoryController@index')->name('add-category');
+    Route::post('/save-category','CategoryController@saveCategory')->name('save-category');
+    Route::get('/manage-category','CategoryController@manageCategory')->name('manage-category');
+    Route::get('/unpublished-category/{id}','CategoryController@unpublishedCategory')->name('unpublished-category');
+    Route::get('/published-category/{id}','CategoryController@publishedCategory')->name('published-category');
+    Route::get('/edit-category/{id}','CategoryController@editCategory')->name('edit-category');
+    Route::post('/update-category','CategoryController@updateCategory')->name('update-category');
+    Route::post('/delete-category','CategoryController@deleteCategory')->name('delete-category');
+});
+
 
 /*-- Category Section End--*/
 
 /*-- SubCategory Section Start--*/
-Route::get('/subcategory/add-subcategory','SubCategoryController@addSubcategory')->name('add-subcategory');
+Route::prefix('subcategory')->group(function (){
+    Route::get('/add-subcategory','SubCategoryController@addSubcategory')->name('add-subcategory');
+    Route::post('/save-sub-category','SubCategoryController@saveSubCategory')->name('save-sub-category');
+    Route::get('/manage-subcategory','SubCategoryController@manageSubcategory')->name('manage-subcategory');
+    Route::get('/unpublished-subcategory/{id}','SubCategoryController@unpublishedSubCategory')->name('unpublished-subcategory');
+    Route::get('/published-subcategory/{id}','SubCategoryController@publishedSubCategory')->name('published-subcategory');
+    Route::get('/edit-subcategory/{id}','SubCategoryController@editSubcategory')->name('edit-subcategory');
+    Route::post('/update-sub-category','SubCategoryController@updateSubCategory')->name('update-sub-category');
+    Route::post('/delete-sub-category','SubCategoryController@deleteSubCategory')->name('delete-subCategory');
 
-Route::get('/subcategory/manage-subcategory','SubCategoryController@manageSubcategory')->name('manage-subcategory');
+});
+
 /*-- SubCategory Section End--*/
 
 /*-- Brand Section Start--*/
