@@ -34,7 +34,7 @@ Route::prefix('category')->group(function (){
     Route::get('/published-category/{id}','CategoryController@publishedCategory')->name('published-category');
     Route::get('/edit-category/{id}','CategoryController@editCategory')->name('edit-category');
     Route::post('/update-category','CategoryController@updateCategory')->name('update-category');
-    Route::post('/delete-category','CategoryController@deleteCategory')->name('delete-category');
+    Route::delete('/delete-category','CategoryController@deleteCategory')->name('delete-category');
 });
 
 

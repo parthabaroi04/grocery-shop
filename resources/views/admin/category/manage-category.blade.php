@@ -56,6 +56,7 @@
                                     <a href="#" id="{{$category->id}}" class="delete-btn btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
                                     <form id="deleteForm{{$category->id}}" action="{{route('delete-category')}}"  method="POST">
                                         @csrf
+                                        @method('DELETE')
                                         <input type="hidden" name="id" value="{{$category->id}}">
                                     </form>
 

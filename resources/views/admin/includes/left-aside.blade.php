@@ -28,16 +28,16 @@
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item {{request()->is('brand','brand/*')?'open-item active-item':''}}">
+    <li class="nav-item {{request()->is('bran','brand/*')?'active link-active':''}}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-folder"></i>
-            <span>Brand</span>
+            <span class="{{request()->is('brand')}} ? 'active':''">Brand</span>
         </a>
         <div id="collapseFour" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Brand</h6>
-                <a class="collapse-item {{request()->is('add-brand')?'active-item':''}}" href="{{route('add-brand')}}">Add Brand</a>
-                <a class="collapse-item {{request()->is('manage-brand')?'active-item':''}}" href="{{route('manage-brand')}}">Manage Brand</a>
+                <a class="collapse-item {{request()->is('brand/add-brand')?'active':''}}" href="{{route('add-brand')}}">Add Brand</a>
+                <a class="collapse-item {{request()->is('brand/manage-brand')?'active':''}}" href="{{route('manage-brand')}}">Manage Brand</a>
             </div>
         </div>
     </li>

@@ -11,6 +11,7 @@ class CategoryController extends Controller
         return view('admin.category.add-category');
     }
     public function saveCategory(Request $request){
+
         $category = new Category();
         $category->category_name        = $request->category_name;
         $category->category_description = $request->category_description;
@@ -51,8 +52,16 @@ class CategoryController extends Controller
     }
 
     public function deleteCategory(Request $request){
-        $category = Category::find($request->id);
-        $category->delete();
+        try {
+            $category = Category::find($request->id);
+            $category->delete();
+            session()->flash('type','success');
+            session()->flash('message','Category Deleted Successfully');
+        }catch (Exception $e){
+            session()->flash('type','danger');
+            session()->flash('message','test');
+        }
+
         return redirect('/category/manage-category');
     }
 }

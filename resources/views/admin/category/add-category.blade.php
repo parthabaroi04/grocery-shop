@@ -5,8 +5,12 @@
        <div class="row">
            <div class="col-md-12">
                <div class="card">
+                   @if(session('message'))
+                       <div class="alert alert-{{session('type')}}">{{session('message')}}</div>
+                   @endif
                    <div class="card-header">
-                       <h3 class="text-center text-primary">Add Category</h3>
+                       <h3 class="col-sm-4 text-primary">Add Category</h3>
+
                    </div>
                    <div class="card-body">
                        <form action="{{route('save-category')}}" method="POST"class="form-horizontal">
